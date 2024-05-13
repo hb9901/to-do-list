@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "../common/Button/Button";
 import "./Header.css";
 
-export function Header({ workingList, setWorkingList }) {
+export function Header({ workingList, setWorkList }) {
   let [todo, setTodo] = useState({
     id: new Date().getDate(),
     title: "",
@@ -19,7 +19,7 @@ export function Header({ workingList, setWorkingList }) {
   }
 
   function onClickAdd() {
-    setWorkingList([...workingList, todo]);
+    setWorkList([...workingList, todo]);
   }
 
   return (

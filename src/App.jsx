@@ -10,7 +10,7 @@ export default function App() {
   return (
     <>
       <div className="layout-wrapper">
-        <Header setState={setWorkList} />
+        <Header workingList={workList} setWorkList={setWorkList} />
         {/* <TodoList title={"Working.."} list={workList} setState={setWorkList} /> */}
         {/* <TodoList title={"Done..!"} list={doneList} setState={setDoneList} /> */}
       </div>
