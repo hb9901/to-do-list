@@ -1,6 +1,6 @@
 import "./Button.css";
 
-export function Button({ children, borderColor, backColor, color }) {
+export function Button({ children, borderColor, backColor, color, onClick }) {
   return (
     <button
       style={{
@@ -9,6 +9,7 @@ export function Button({ children, borderColor, backColor, color }) {
         color: color,
       }}
       className="button"
+      onClick={onClick}
     >
       {children}
     </button>

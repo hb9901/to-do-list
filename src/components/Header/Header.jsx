@@ -4,22 +4,29 @@ import "./Header.css";
 
 export function Header({ workingList, setWorkList }) {
   let [todo, setTodo] = useState({
-    id: new Date().getDate(),
+    id: new Date().getUTCDate(),
     title: "",
     content: "",
     state: "",
   });
 
   function onTitleChange({ target: { value } }) {
-    setTodo((todo.title = value));
+    setTodo((prevState) => {
+      return {...prevState, title: value}
+    });
   }
 
   function onContentChange({ target: { value } }) {
-    setTodo((todo.content = value));
+    setTodo((prevState) => {
+      return { ...prevState, content: value };
+    });
   }
 
-  function onClickAdd() {
-    setWorkList([...workingList, todo]);
+  function onClickAdd(e) {
+    e.preventDefault();
+    setWorkList((prevState) => {
+      return [...prevState, todo];
+    });
   }
 
   return (
