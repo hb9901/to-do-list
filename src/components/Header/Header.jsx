@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "../common/Button/Button";
 import "./Header.css";
 
-export function Header({ workingList, setWorkList }) {
+export function Header({ todoList, setTodoList }) {
   let [todo, setTodo] = useState({
     id: new Date().getUTCDate(),
     title: "",
@@ -24,7 +24,10 @@ export function Header({ workingList, setWorkList }) {
 
   function onClickAdd(e) {
     e.preventDefault();
-    setWorkList((prevState) => {
+    setTodo((prevState) => {
+      return { ...prevState, state: "working" };
+    });
+    setTodoList((prevState) => {
       return [...prevState, todo];
     });
   }
