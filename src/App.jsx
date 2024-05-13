@@ -1,16 +1,20 @@
+import { useState } from 'react';
 import './App.css';
+import { Header } from './components/Header/Header';
+import TodoList from './components/TodoList/TodoList';
 
-function App() {
+export default function App() {
+  let [workList, setWorkList] = useState([]); 
+  let [doneList, setDoneList] = useState([]);
+
 
   return (
     <>
       <div className="layout-wrapper">
-        <header></header>
-        <div>
-        </div>
+        <Header setState={setWorkList} />
+        <TodoList title={"Working.."} list={workList} setState={setWorkList} />
+        <TodoList title={"Done..!"} list={doneList} setState={setDoneList} />
       </div>
     </>
   );
 }
-
-export default App
