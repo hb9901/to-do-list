@@ -1,3 +1,5 @@
+import "./Button.css";
+
 export function Button({ children, borderColor, backColor, color }) {
   return (
     <button
