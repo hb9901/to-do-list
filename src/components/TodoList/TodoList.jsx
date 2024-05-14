@@ -14,6 +14,7 @@ export default function TodoList({ onDelete, onToggleDone, title, list }) {
             onToggleDone={onToggleDone}
             title={todo.title}
             content={todo.content}
+            isDone={todo.isDone}
           />
         );
       })}

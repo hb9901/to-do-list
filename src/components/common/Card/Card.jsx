@@ -1,7 +1,7 @@
 import { Button } from "../Button/Button";
 import "./Card.css";
 
-export default function Card({ id, onDelete, onToggleDone, title, content }) {
+export default function Card({ id, onDelete, onToggleDone, title, content, isDone}) {
   const onClickDelete = () => {
     onDelete(id);
   }
@@ -29,7 +29,7 @@ export default function Card({ id, onDelete, onToggleDone, title, content }) {
           color={"black"}
           onClick={onClickState}
         >
-          완료
+          {isDone ? `취소` : `완료`}
         </Button>
       </div>
     </div>
