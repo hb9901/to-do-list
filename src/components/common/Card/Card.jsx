@@ -31,9 +31,8 @@ export default function Card({ id, onDelete, onToggleDone, title, content, isDon
           삭제하기
         </Button>
         <Button
-          borderColor={"green"}
-          backColor={"white"}
-          color={"black"}
+          backColor={isDone ? `#40CEB1` : `#F0937F`}
+          color={"white"}
           onClick={onClickState}
         >
           {isDone ? `취소` : `완료`}
