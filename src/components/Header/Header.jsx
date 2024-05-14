@@ -2,34 +2,32 @@ import { useState } from "react";
 import { Button } from "../common/Button/Button";
 import "./Header.css";
 
-export function Header({ setTodoList }) {
+export function Header({ onAdd }) {
    let [todo, setTodo] = useState({
      id: new Date().getTime(),
      title: "",
      content: "",
-     state: "working",
+     isDone: false,
    });
 
-  function onTitleChange({ target: { value } }) {
+  const onTitleChange = ({ target: { value } }) => {
     setTodo((prevState) => {
       return {...prevState, title: value}
     });
   }
 
-  function onContentChange({ target: { value } }) {
+  const onContentChange = ({ target: { value } }) => {
     setTodo((prevState) => {
       return { ...prevState, content: value };
     });
   }
 
-  function onClickAdd(e) {
+  const onClickAdd = (e) => {
     e.preventDefault();
     setTodo((prevState) => {
       return { ...prevState, id: new Date().getTime()};
     });
-    setTodoList((prevState) => {
-      return [...prevState, todo];
-    });
+    onAdd(todo);
   }
 
   return (

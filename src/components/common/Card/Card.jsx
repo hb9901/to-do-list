@@ -1,9 +1,13 @@
 import { Button } from "../Button/Button";
 import "./Card.css";
 
-export default function Card({ id, todoList, setTodoList, title, content }) {
-  function onClickDelete() {
-    setTodoList(todoList.filter((todo)=> todo.id !== id))
+export default function Card({ id, onDelete, onToggleDone, title, content }) {
+  const onClickDelete = () => {
+    onDelete(id);
+  }
+
+  const onClickState = () => {
+    onToggleDone(id);
   }
 
   return (
@@ -19,7 +23,12 @@ export default function Card({ id, todoList, setTodoList, title, content }) {
         >
           삭제하기
         </Button>
-        <Button borderColor={"green"} backColor={"white"} color={"black"}>
+        <Button
+          borderColor={"green"}
+          backColor={"white"}
+          color={"black"}
+          onClick={onClickState}
+        >
           완료
         </Button>
       </div>
