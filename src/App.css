@@ -1,5 +1,7 @@
 .layout-wrapper{
-  max-width: 1200px;
-  min-width: 800px;
+  max-width: 1160px;
+  min-width: 760px;
+  padding: 20px;
+
   background-color: #EFEDE0;;
 }

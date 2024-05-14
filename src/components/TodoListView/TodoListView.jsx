@@ -3,8 +3,8 @@ import "./TodoListView.css";
 
 export default function TodoListView({ onDelete, onToggleDone, title, list }) {
   return (
-    <div className="todoList-wrapper">
-      <div className="todoList-title">{title}</div>
+    <div className="todo-list-wrapper">
+      <div className="todo-list-title">{title}</div>
       {list.map((todo) => {
         return (
           <Card
