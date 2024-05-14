@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import { Header } from "./components/Header/Header";
 import { TodoInputForm } from "./components/TodoInputForm/TodoInputForm";
 import TodoListView from "./components/TodoListView/TodoListView";
 
@@ -35,7 +36,7 @@ export default function App () {
   return (
     <>
       <div className="layout-wrapper">
-        <TodoInputForm onAdd={handleAdd} />
+        <Header/>
         <TodoListView
           onDelete={handleDelete}
           onToggleDone={handleToggleDone}
@@ -48,6 +49,7 @@ export default function App () {
           title={"Done..!"}
           list={doneList}
         />
+        <TodoInputForm onAdd={handleAdd} />
       </div>
     </>
   );
