@@ -12,7 +12,14 @@ export default function Card({ id, onDelete, onToggleDone, title, content, isDon
 
   return (
     <div className="card-wrapper">
-      <div className="card-title">{title}</div>
+      <div
+        className="card-title"
+        style={{
+          backgroundColor: isDone ? `#F0937F` : `#40CEB1`,
+        }}
+      >
+        {title}
+      </div>
       <div className="card-content">{content}</div>
       <div className="card-button-wrapper">
         <Button
