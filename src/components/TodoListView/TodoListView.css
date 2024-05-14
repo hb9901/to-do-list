@@ -1,0 +1,17 @@
+.todo-list-wrapper {
+  padding-top: 20px;
+}
+
+.todo-list-title {
+  color: #8d9186;
+
+  font-size: 30px;
+}
+
+.todo-list-view{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    padding: 20px;
+    gap: 20px
+}

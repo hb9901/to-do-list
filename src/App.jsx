@@ -40,13 +40,13 @@ export default function App () {
         <TodoListView
           onDelete={handleDelete}
           onToggleDone={handleToggleDone}
-          title={"Working.."}
+          title={"Working"}
           list={workList}
         />
         <TodoListView
           onDelete={handleDelete}
           onToggleDone={handleToggleDone}
-          title={"Done..!"}
+          title={"Done"}
           list={doneList}
         />
         <TodoInputForm onAdd={handleAdd} />
