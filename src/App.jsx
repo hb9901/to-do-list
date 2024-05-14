@@ -3,32 +3,27 @@ import "./App.css";
 import { Header } from "./components/Header/Header";
 import TodoList from "./components/TodoList/TodoList";
 
-const App = () => {
+export default function App () {
   let [todoList, setTodoList] = useState([]);
-  let workList = [];
-  let doneList = [];
-
-  todoList.forEach((todo) => {
-    if (!todo.isDone) {
-      workList.push(todo);
-    } else{
-      doneList.push(todo);
-    }
-  });
-
-  // const workList = todoList.filter((todo) => !todo.isDone);
-  // const doneList = todoList.filter((todo) => todo.isDone);
+  const workList = todoList.filter((todo) => !todo.isDone);
+  const doneList = todoList.filter((todo) => todo.isDone);
 
   const handleDelete = (id) => {
     setTodoList(todoList.filter((todo) => todo.id !== id));
   };
 
   const handleToggleDone = (id) => {
-    setTodoList(
-      todoList.map((todo) =>
-        todo.id === id ? { ...todo, isDone: !todo.isDone } : todo
-      )
-    );
+    todoList.forEach((todo, index) => {
+      if (todo.id === id) {
+        const newTodoList = todoList[index];
+        newTodoList.isDone = !newTodoList.isDone;
+
+        setTodoList([
+          ...todoList.filter((todo) => todo.id !== id),
+          newTodoList,
+        ]);
+      }
+    });
   };
 
   const handleAdd = (todo) => {
@@ -57,5 +52,3 @@ const App = () => {
     </>
   );
 };
-
-export default App;
