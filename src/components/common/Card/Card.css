@@ -1,42 +1,41 @@
-.card-wrapper{
-    display: flex;
-    flex-direction: column;
-    
-    gap:20px;
-    background-color: white;
-    border-radius: 15px;
+.card-wrapper {
+  display: flex;
+  flex-direction: column;
 
-    max-width: 300px;
+  gap: 20px;
+  background-color: white;
+  border-radius: 15px;
+
+  max-width: 300px;
 }
 
-.card-title{
-    display: flex;
-    align-items: center;
+.card-title {
+  display: flex;
+  align-items: center;
 
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    height: 50px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  height: 50px;
 
-    padding-left: 20px;
-    padding-right: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 
-    font-size: 20px;
+  font-size: 20px;
 
-    color: white;
+  color: white;
 }
 
-.card-content{
-    padding-left: 20px;
-    padding-right: 20px;
+.card-content {
+  padding-left: 20px;
+  padding-right: 20px;
 
-    word-break: break-all;
+  word-break: break-all;
 }
 
-.card-button-wrapper{
-    display: flex;
-    flex-direction: row;
+.card-button-wrapper {
+  display: flex;
+  flex-direction: row;
 
-    gap: 10px;
-    padding: 20px;
+  gap: 10px;
+  padding: 20px;
 }
-

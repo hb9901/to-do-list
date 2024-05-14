@@ -36,7 +36,8 @@ export default function App () {
   return (
     <>
       <div className="layout-wrapper">
-        <Header/>
+        <Header />
+        <TodoInputForm onAdd={handleAdd} />
         <TodoListView
           onDelete={handleDelete}
           onToggleDone={handleToggleDone}
@@ -49,7 +50,6 @@ export default function App () {
           title={"Done"}
           list={doneList}
         />
-        <TodoInputForm onAdd={handleAdd} />
       </div>
     </>
   );
