@@ -1,0 +1,14 @@
+.header-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 130px;
+
+    font-size: 40px;
+
+    color: #8D9186;
+    background-color: #EFEDE0;
+    border-bottom: 1px solid black ;
+}

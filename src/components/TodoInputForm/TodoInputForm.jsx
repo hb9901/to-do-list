@@ -31,7 +31,7 @@ export function TodoInputForm({ onAdd }) {
   };
 
   return (
-    <div className="header-wrapper">
+    <div className="todo-input-form-wrapper">
       <form>
         <label>제목</label>
         <input type="text" onChange={onTitleChange} />
