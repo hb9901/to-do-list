@@ -8,7 +8,7 @@
   margin-top: 20px;
   padding: 20px;
 
-  background-color: #c3cbbd;
+  background-color: #838880;
 }
 
 .todo-input-form {
@@ -17,7 +17,7 @@
 }
 
 .todo-input-form-label {
-  color: #4a6870;
+  color: white;
   font-size: 15px;
   font-weight: bolder;
 }
