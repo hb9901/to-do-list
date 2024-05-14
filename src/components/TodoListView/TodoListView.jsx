@@ -1,7 +1,7 @@
 import Card from "../common/Card/Card";
-import "./TodoList.css";
+import "./TodoListView.css";
 
-export default function TodoList({ onDelete, onToggleDone, title, list }) {
+export default function TodoListView({ onDelete, onToggleDone, title, list }) {
   return (
     <div className="todoList-wrapper">
       <div className="todoList-title">{title}</div>

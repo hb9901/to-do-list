@@ -1,34 +1,34 @@
 import { useState } from "react";
 import { Button } from "../common/Button/Button";
-import "./Header.css";
+import "./TodoInputForm.css";
 
-export function Header({ onAdd }) {
-   let [todo, setTodo] = useState({
-     id: new Date().getTime(),
-     title: "",
-     content: "",
-     isDone: false,
-   });
+export function TodoInputForm({ onAdd }) {
+  let [todo, setTodo] = useState({
+    id: new Date().getTime(),
+    title: "",
+    content: "",
+    isDone: false,
+  });
 
   const onTitleChange = ({ target: { value } }) => {
     setTodo((prevState) => {
-      return {...prevState, title: value}
+      return { ...prevState, title: value };
     });
-  }
+  };
 
   const onContentChange = ({ target: { value } }) => {
     setTodo((prevState) => {
       return { ...prevState, content: value };
     });
-  }
+  };
 
   const onClickAdd = (e) => {
     e.preventDefault();
     setTodo((prevState) => {
-      return { ...prevState, id: new Date().getTime()};
+      return { ...prevState, id: new Date().getTime() };
     });
     onAdd(todo);
-  }
+  };
 
   return (
     <div className="header-wrapper">

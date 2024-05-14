@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
-import { Header } from "./components/Header/Header";
-import TodoList from "./components/TodoList/TodoList";
+import { TodoInputForm } from "./components/TodoInputForm/TodoInputForm";
+import TodoListView from "./components/TodoListView/TodoListView";
 
 export default function App () {
   let [todoList, setTodoList] = useState([]);
@@ -35,14 +35,14 @@ export default function App () {
   return (
     <>
       <div className="layout-wrapper">
-        <Header onAdd={handleAdd} />
-        <TodoList
+        <TodoInputForm onAdd={handleAdd} />
+        <TodoListView
           onDelete={handleDelete}
           onToggleDone={handleToggleDone}
           title={"Working.."}
           list={workList}
         />
-        <TodoList
+        <TodoListView
           onDelete={handleDelete}
           onToggleDone={handleToggleDone}
           title={"Done..!"}
@@ -51,4 +51,4 @@ export default function App () {
       </div>
     </>
   );
-};
+}
