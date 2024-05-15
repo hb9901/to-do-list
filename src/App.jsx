@@ -4,7 +4,7 @@ import { Header } from "./components/Header/Header";
 import { TodoInputForm } from "./components/TodoInputForm/TodoInputForm";
 import TodoListView from "./components/TodoListView/TodoListView";
 
-export default function App () {
+export default function App() {
   let [todoList, setTodoList] = useState([]);
   const workList = todoList.filter((todo) => !todo.isDone);
   const doneList = todoList.filter((todo) => todo.isDone);
@@ -14,22 +14,24 @@ export default function App () {
   };
 
   const handleToggleDone = (id) => {
-    todoList.forEach((todo, index) => {
-      if (todo.id === id) {
-        const newTodoList = todoList[index];
-        newTodoList.isDone = !newTodoList.isDone;
+    // 방법1. 완료/취소 버튼을 누르면 처음 생성했던 순서대로 정렬한다.
+    // setTodoList(
+    //   todoList.map((todo) => {
+    //     return id === todo.id ? { ...todo, isDone: !todo.isDone } : todo;
+    //   })
+    // );
 
-        setTodoList([
-          ...todoList.filter((todo) => todo.id !== id),
-          newTodoList,
-        ]);
-      }
-    });
+    // 방법2. 새로 완료/취소 버튼을 누른 카드를 맨 뒤로 보낸다.
+    let newTodoList = {};
+    setTodoList([...todoList.filter((todo) => {
+      if (todo.id === id) newTodoList = { ...todo, isDone: !todo.isDone };
+      return todo.id !== id
+    }), newTodoList]);
   };
 
   const handleAdd = (todo) => {
     setTodoList((prevState) => {
-      return [...prevState, todo];
+      return prevState.concat(todo);
     });
   };
 

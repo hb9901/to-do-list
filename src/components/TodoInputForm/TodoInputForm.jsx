@@ -9,25 +9,45 @@ export function TodoInputForm({ onAdd }) {
     content: "",
     isDone: false,
   });
+  const MAX_TITLE_LENGTH = 10;
+  const MAX_CONTENT_LEGNTH = 10;
+  const $titleInput = document.querySelector(".todo-input-form-title-input");
+  const $contentInput = document.querySelector(
+    ".todo-input-form-content-input"
+  );
 
   const onTitleChange = ({ target: { value } }) => {
-    setTodo((prevState) => {
-      return { ...prevState, title: value };
-    });
+    if (value.length < MAX_TITLE_LENGTH) {
+      setTodo((prevState) => {
+        return { ...prevState, title: value };
+      });
+    } else {
+      alert(`제목은 ${MAX_TITLE_LENGTH}자를 초과할 수 없습니다!`);
+      $titleInput.value = todo.title;
+    }
   };
 
   const onContentChange = ({ target: { value } }) => {
-    setTodo((prevState) => {
-      return { ...prevState, content: value };
-    });
+    if (value.length < MAX_CONTENT_LEGNTH) {
+      setTodo((prevState) => {
+        return { ...prevState, content: value };
+      });
+    } else {
+      alert(`내용은 ${MAX_CONTENT_LEGNTH}자를 초과할 수 없습니다!`);
+      $contentInput.value = todo.content;
+    }
   };
 
   const onClickAdd = (e) => {
     e.preventDefault();
-    setTodo((prevState) => {
-      return { ...prevState, id: new Date().getTime() };
-    });
-    onAdd(todo);
+    if (todo.title.length > 0 && todo.content.length > 0) {
+      setTodo((prevState) => {
+        return { ...prevState, id: new Date().getTime() };
+      });
+      onAdd(todo);
+    } else {
+      alert("빈 칸은 추가할 수 없습니다!");
+    }
   };
 
   return (
