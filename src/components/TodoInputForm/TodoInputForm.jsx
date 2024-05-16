@@ -67,27 +67,25 @@ export function TodoInputForm({ onAdd }) {
     <div className="todo-input-form-wrapper">
       <form className="todo-input-form" onSubmit={onClickAdd}>
         <div>
-          <label className="todo-input-form-label">제목: </label>
-          <input
-            ref={titleInputRef}
-            className="todo-input-form-title-input"
-            type="text"
-            onChange={onTitleChange}
-          />
+          <label className="todo-input-form-label">
+            제목: 
+            <input
+              ref={titleInputRef}
+              className="todo-input-form-title-input"
+              type="text"
+              onChange={onTitleChange}
+            />
+          </label>
+          <label className="todo-input-form-label">
+            내용: 
+            <input
+              className="todo-input-form-content-input"
+              type="text"
+              onChange={onContentChange}
+            />
+          </label>
         </div>
-        <div className="todo-input-form-content-wrapper">
-          <label className="todo-input-form-label">내용: </label>
-          <input
-            className="todo-input-form-content-input"
-            type="text"
-            onChange={onContentChange}
-          />
-        </div>
-        <Button
-          borderColor={"#2F4858"}
-          backColor={"#4B6767"}
-          color={"white"}
-        >
+        <Button borderColor={"#2F4858"} backColor={"#4B6767"} color={"white"}>
           추가하기
         </Button>
       </form>

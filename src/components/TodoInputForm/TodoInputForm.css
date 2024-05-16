@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
 
   border-radius: 10px;
   margin-top: 20px;
@@ -14,12 +13,17 @@
 .todo-input-form {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
 }
 
 .todo-input-form-label {
   color: white;
   font-size: 15px;
   font-weight: bolder;
+
 }
 
 .todo-input-form-title-input {
@@ -30,14 +34,8 @@
   height: 20px;
 
   padding-left: 10px;
+  margin-left: 5px;
   margin-right: 20px;
-}
-
-.todo-input-form-content-wrapper {
-  display: flex;
-  flex-direction: row;
-
-  align-items: start;
 }
 
 .todo-input-form-content-input {
