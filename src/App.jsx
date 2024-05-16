@@ -16,9 +16,7 @@ export default function App() {
   const handleToggleDone = (id) => {
     // 방법1. 완료/취소 버튼을 누르면 처음 생성했던 순서대로 정렬한다.
     // setTodoList(
-    //   todoList.map((todo) => {
-    //     return id === todo.id ? { ...todo, isDone: !todo.isDone } : todo;
-    //   })
+    //   todoList.map((todo) =>  id === todo.id ? { ...todo, isDone: !todo.isDone } : todo)
     // );
 
     // 방법2. 새로 완료/취소 버튼을 누른 카드를 맨 뒤로 보낸다.
@@ -30,9 +28,7 @@ export default function App() {
   };
 
   const handleAdd = (todo) => {
-    setTodoList((prevState) => {
-      return prevState.concat(todo);
-    });
+    setTodoList((prevState) =>  prevState.concat(todo));
   };
 
   return (
