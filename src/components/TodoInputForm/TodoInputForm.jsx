@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import {
   checkBtnValidation,
   checkInputValidation,
@@ -9,13 +9,14 @@ import "./TodoInputForm.css";
 export function TodoInputForm({ onAdd }) {
   const MAX_TITLE_LENGTH = 10;
   const MAX_CONTENT_LEGNTH = 10;
-  
-  let [todo, setTodo] = useState({
+
+  const [todo, setTodo] = useState({
     id: new Date().getTime(),
     title: "",
     content: "",
     isDone: false,
   });
+  const titleInputRef = useRef(null);
 
   const onTitleChange = ({ target }) => {
     checkInputValidation({
@@ -58,6 +59,8 @@ export function TodoInputForm({ onAdd }) {
       });
       onAdd(todo);
     }
+
+    titleInputRef.current.focus();
   };
 
   return (
@@ -66,6 +69,7 @@ export function TodoInputForm({ onAdd }) {
         <div>
           <label className="todo-input-form-label">제목: </label>
           <input
+            ref={titleInputRef}
             className="todo-input-form-title-input"
             type="text"
             onChange={onTitleChange}
