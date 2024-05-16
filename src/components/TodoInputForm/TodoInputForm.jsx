@@ -46,13 +46,13 @@ export function TodoInputForm({ onAdd }) {
   const onClickAdd = (e) => {
     e.preventDefault();
 
-    const ifBtnValidate = checkBtnValidation({
+    const isBtnValidate = checkBtnValidation({
       targetList: [todo.title, todo.content],
       limit: 0,
       message: "빈 칸은 추가할 수 없습니다!",
     });
 
-    if (ifBtnValidate) {
+    if (isBtnValidate) {
       setTodo((prevState) => {
         return { ...prevState, id: new Date().getTime() };
       });
