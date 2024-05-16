@@ -1,8 +1,8 @@
 import "./Header.css"
 export function Header() {
   return (
-    <div className="header-wrapper">
+    <header className="header-wrapper">
       {`TODAY'S TASK`}
-    </div>
+    </header>
   )
 }

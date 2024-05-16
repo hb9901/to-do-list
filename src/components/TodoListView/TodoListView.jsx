@@ -3,13 +3,13 @@ import "./TodoListView.css";
 
 export default function TodoListView({ onDelete, onToggleDone, title, list }) {
   return (
-    <div className="todo-list-wrapper">
+    <section className="todo-list-wrapper">
       <div className="todo-list-title">{title}</div>
-      <div className="todo-list-view">
+      <ul className="todo-list-view">
         {list.map((todo) => {
           return (
+          <li key={todo.id}>
             <Card
-              key={todo.id}
               id={todo.id}
               onDelete={onDelete}
               onToggleDone={onToggleDone}
@@ -17,9 +17,9 @@ export default function TodoListView({ onDelete, onToggleDone, title, list }) {
               content={todo.content}
               isDone={todo.isDone}
             />
-          );
+          </li>)
         })}
-      </div>
-    </div>
+      </ul>
+    </section>
   );
 }
