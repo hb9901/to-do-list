@@ -1,52 +1,62 @@
 import { useState } from "react";
+import {
+  checkBtnValidation,
+  checkInputValidation,
+} from "../../assets/functions";
 import { Button } from "../common/Button/Button";
 import "./TodoInputForm.css";
 
 export function TodoInputForm({ onAdd }) {
+  const MAX_TITLE_LENGTH = 10;
+  const MAX_CONTENT_LEGNTH = 10;
+  
   let [todo, setTodo] = useState({
     id: new Date().getTime(),
     title: "",
     content: "",
     isDone: false,
   });
-  const MAX_TITLE_LENGTH = 10;
-  const MAX_CONTENT_LEGNTH = 10;
-  const $titleInput = document.querySelector(".todo-input-form-title-input");
-  const $contentInput = document.querySelector(
-    ".todo-input-form-content-input"
-  );
 
-  const onTitleChange = ({ target: { value } }) => {
-    if (value.length < MAX_TITLE_LENGTH) {
-      setTodo((prevState) => {
-        return { ...prevState, title: value };
-      });
-    } else {
-      alert(`제목은 ${MAX_TITLE_LENGTH}자를 초과할 수 없습니다!`);
-      $titleInput.value = todo.title;
-    }
+  const onTitleChange = ({ target }) => {
+    checkInputValidation({
+      target: target,
+      limit: MAX_TITLE_LENGTH,
+      message: `제목은 ${MAX_TITLE_LENGTH}자를 넘길 수 없습니다!`,
+      value: todo.title,
+    });
+
+    setTodo((prevState) => {
+      return { ...prevState, title: target.value };
+    });
   };
 
-  const onContentChange = ({ target: { value } }) => {
-    if (value.length < MAX_CONTENT_LEGNTH) {
-      setTodo((prevState) => {
-        return { ...prevState, content: value };
-      });
-    } else {
-      alert(`내용은 ${MAX_CONTENT_LEGNTH}자를 초과할 수 없습니다!`);
-      $contentInput.value = todo.content;
-    }
+  const onContentChange = ({ target }) => {
+    checkInputValidation({
+      target: target,
+      limit: MAX_CONTENT_LEGNTH,
+      message: `내용은 ${MAX_CONTENT_LEGNTH}자를 넘길 수 없습니다!`,
+      value: todo.content,
+    });
+
+    setTodo((prevState) => {
+      return { ...prevState, content: target.value };
+    });
   };
 
   const onClickAdd = (e) => {
     e.preventDefault();
-    if (todo.title.length > 0 && todo.content.length > 0) {
+
+    const ifBtnValidate = checkBtnValidation({
+      targetList: [todo.title, todo.content],
+      limit: 0,
+      message: "빈 칸은 추가할 수 없습니다!",
+    });
+
+    if (ifBtnValidate) {
       setTodo((prevState) => {
         return { ...prevState, id: new Date().getTime() };
       });
       onAdd(todo);
-    } else {
-      alert("빈 칸은 추가할 수 없습니다!");
     }
   };
 
