@@ -65,7 +65,7 @@ export function TodoInputForm({ onAdd }) {
 
   return (
     <div className="todo-input-form-wrapper">
-      <form className="todo-input-form">
+      <form className="todo-input-form" onSubmit={onClickAdd}>
         <div>
           <label className="todo-input-form-label">제목: </label>
           <input
@@ -83,16 +83,14 @@ export function TodoInputForm({ onAdd }) {
             onChange={onContentChange}
           />
         </div>
+        <Button
+          borderColor={"#2F4858"}
+          backColor={"#4B6767"}
+          color={"white"}
+        >
+          추가하기
+        </Button>
       </form>
-      <Button
-        borderColor={"#2F4858"}
-        backColor={"#4B6767"}
-        color={"white"}
-        onClick={onClickAdd}
-      >
-        추가하기
-      </Button>
-      {/* <button className="todo-input-form-button">추가하기</button> */}
     </div>
   );
 }
