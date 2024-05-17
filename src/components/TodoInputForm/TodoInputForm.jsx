@@ -8,10 +8,10 @@ import "./TodoInputForm.css";
 
 export function TodoInputForm({ onAdd }) {
   const MAX_TITLE_LENGTH = 10;
-  const MAX_CONTENT_LEGNTH = 10;
+  const MAX_CONTENT_LEGNTH = 20;
 
   const [todo, setTodo] = useState({
-    id: new Date().getTime(),
+    id: crypto.randomUUID,
     title: "",
     content: "",
     isDone: false,
