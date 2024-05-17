@@ -20,16 +20,14 @@
   
   ![TODOLIST작성](https://github.com/hb9901/to-do-list/assets/50387658/5a8bd688-6084-4210-9a40-2490a5e1e05c)
 
-
   <li>To Do 상태 변경</li>
   <br/>
 
   ![TODOLIST상태변경](https://github.com/hb9901/to-do-list/assets/50387658/7080c3d6-831c-46b3-b06b-b1c5233c4b15)
 
-
   <li>To Do 삭제</li>
   <br/>
 
-  ![TODOLIST작성](https://github.com/hb9901/to-do-list/assets/50387658/76533338-e2e4-44cc-a188-6d4595d3c2a7)
+  ![TODOLIST삭제](https://github.com/hb9901/to-do-list/assets/50387658/93e36831-d11c-482f-a69d-25256fc7ad8a)
 
 </ul>
