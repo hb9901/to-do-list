@@ -5,7 +5,7 @@ import { TodoInputForm } from "./components/TodoInputForm/TodoInputForm";
 import TodoListView from "./components/TodoListView/TodoListView";
 
 export default function App() {
-  let [todoList, setTodoList] = useState([]);
+  const [todoList, setTodoList] = useState([]);
   const workList = todoList.filter((todo) => !todo.isDone);
   const doneList = todoList.filter((todo) => todo.isDone);
 
